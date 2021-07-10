@@ -11,6 +11,14 @@ CMM Agent is simply collector of informations from mining softwares.
 - Management and Statistics
 - Many more ...
 
+## Examples of usage 
+
+With Configuration file
+
+```
+java -jar cmm-agent.jar --configuration.path=./local-configuraton.json --ui=false 
+```
+
 ### Supported Miner:
 
 ## T-Rex
