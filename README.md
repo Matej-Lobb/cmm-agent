@@ -1,4 +1,4 @@
-# cmm-agent (Cryptocurrency mining manager agent)
+# Cryptocurrency mining manager agent (cmm-agent)
 
 ## Descritpion
 CMM Agent is simply collector of informations from mining softwares.
