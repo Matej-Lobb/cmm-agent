@@ -14,7 +14,7 @@ CMM Agent is simply collector of informations from mining softwares.
 ## Examples of usage 
 
 With Configuration file
-
+## CMM Agent have to be alway runned as adiministrator.
 ```
 java -jar cmm-agent.jar --configuration.path=./local-configuraton.json --ui=false 
 ```
@@ -30,6 +30,7 @@ java -jar cmm-agent.jar --configuration.path=./local-configuraton.json --ui=fals
 
 | Version | Install            | Local Instance     | Collect statistics | Windows            | Linux |
 | ------- | -------------------| -------------------| -------------------| ------------------ | ----- |
+| 1.0.2   | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:   | 
 | 1.0.1   | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:   |  
 | 1.0.0   | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :x:   |
     
@@ -45,7 +46,7 @@ Example Configuration for install:
     {
       "wallet": "your-wallet-id",
       "poolUrl": "stratum+tcp://eth.2miners.com:2020",
-      "url": "http://127.0.0.1:4067/summary",
+      "statisticsUrl": "http://127.0.0.1:4067/summary",
       "type": "trex",
       "coin": "eth"
     }
@@ -64,12 +65,12 @@ Example Configuration for local instance:
     {
       "wallet": "your-wallet-id",
       "poolUrl": "stratum+tcp://eth.2miners.com:2020",
-      "url": "http://127.0.0.1:4067/summary",
+      "statisticsUrl": "http://127.0.0.1:4067/summary",
       "type": "trex",
       "coin": "eth",
       "localInstance": {
-        "customExecutable": "E:\\Crypto\\Monero\\xmr-pool-6t.bat",
-        "pathToExistingMiner": "E:\\Crypto\\Monero\\"
+        "customExecutable": "E:\\Crypto\\Eth\\start-mining.bat",
+        "pathToExistingMiner": "E:\\Crypto\\Eth\\"
       }
     }
   ]
@@ -85,13 +86,33 @@ Example Configuration for local instance:
 
 | Version | Install            | Local Instance     | Collect statistics | Windows            | Linux |
 | ------- | -------------------| -------------------| -------------------| ------------------ | ----- |
+| 1.0.2   | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:   |
 | 1.0.1   | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:   |  
 | 1.0.0   | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :x:   |
 
+Example Configuration for install:
+- This will simple start agent and install xmrig and automatically start mining
+
+```json
+{
+  "name": "agent1",
+  "farmId": "test",
+  "token": "test",
+  "miners": [
+    {
+      "wallet": "your-wallet-id",
+      "type" : "xmrig",
+      "coin" : "xmr",
+      "poolUrl" : "xmr.2miners.com:2222",
+      "statisticsUrl" : "http://127.0.0.1:9500/2/summary",
+      "cpuThreadCount" : 8
+    }
+  ]
+}
+```
 
 Example Configuration for local instance:
 - Use already installed Xmrig miner
-- You need to run agent as administrator for correct working of this miner !
 
 ```json
 {
@@ -101,10 +122,11 @@ Example Configuration for local instance:
   "miners": [
     {
       "wallet": "your_wallet_id",
-      "url": "http://127.0.0.1:9500/2/summary",
+      "statisticsUrl": "http://127.0.0.1:9500/2/summary",
       "type": "xmrig",
+      "coin" : "xmr",
       "localInstance": {
-        "customExecutable": "E:\\Crypto\\Monero\\xmr-pool-6t.bat",
+        "customExecutable": "E:\\Crypto\\Monero\\start-mining.bat",
         "pathToExistingMiner": "E:\\Crypto\\Monero\\"
       }
     }
