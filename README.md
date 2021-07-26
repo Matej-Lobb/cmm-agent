@@ -3,9 +3,11 @@
 ## Descritpion
 CMM Agent is simply collector of informations from mining softwares.
 
-## Planed Features
+## Features
 - Agent Application UI
 - CMD only usage
+
+## Planed Features
 - Dashboard Application View
 - CMM Web Application
 - Management and Statistics
@@ -13,13 +15,29 @@ CMM Agent is simply collector of informations from mining softwares.
 
 ## Examples of usage 
 
-With Configuration file
-## CMM Agent have to be alway runned as adiministrator.
+### Configuration file
+#### Examples of configuration file is listed bellow for specific miners
+#### CMM Agent have to be always runned as adiministrator.
 ```
 java -jar cmm-agent.jar --configuration.path=./local-configuraton.json --ui=false 
 ```
 
-### Supported Miner:
+### UI
+#### CMM Agent have to be always runned as adiministrator.
+
+#### Login View:
+
+![login](https://i.imgur.com/Mjt9axS.png)
+
+#### CPU Management
+
+![cpu](https://i.imgur.com/I7zsCr0.png)
+
+#### GPU Management
+
+![gpu](https://i.imgur.com/lurIDkO.png)
+
+# Supported Miner:
 
 ## T-Rex
     URL: https://trex-miner.com/
