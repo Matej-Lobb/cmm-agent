@@ -26,6 +26,9 @@ java -jar cmm-agent.jar --configuration.path=./local-configuraton.json --ui=fals
 #### CMM Agent have to be always runned as adiministrator.
 
 #### Login View:
+### Without registration (which will be included in main web application) you can use test account:
+ - username: test
+ - password: test
 
 ![login](https://i.imgur.com/Mjt9axS.png)
 
